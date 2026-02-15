@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insta Growth India</title>
+<title>Instagram Followers Offer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
 body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(to right,#4e008e,#ff6a00);
-color:white;
+background: linear-gradient(to right,#4e008e,#ff6a00);
+font-family: Arial;
 text-align:center;
+color:white;
+margin:0;
 }
 
 h1{
 padding:20px;
 }
 
-.package{
-background:rgba(0,0,0,0.4);
-margin:15px;
+.box{
+background: rgba(0,0,0,0.4);
+margin:20px;
 padding:20px;
 border-radius:15px;
 }
 
-.price{
-font-size:22px;
-color:#00ff99;
-margin:10px 0;
-}
-
 button{
-padding:10px 25px;
+padding:10px 20px;
 background:#00c853;
+color:white;
 border:none;
 border-radius:8px;
-color:white;
 font-size:16px;
 cursor:pointer;
 }
 
-button:hover{
-background:#009624;
-}
-
-/* Popup */
 #popup{
 display:none;
 position:fixed;
@@ -59,26 +48,38 @@ background:rgba(0,0,0,0.8);
 background:white;
 color:black;
 width:90%;
-max-width:350px;
-margin:100px auto;
+max-width:400px;
+margin:50px auto;
 padding:20px;
-border-radius:10px;
+border-radius:15px;
+position:relative;
 }
 
-.popup-content img{
-width:200px;
-margin:10px 0;
+.close{
+position:absolute;
+right:15px;
+top:10px;
+font-size:22px;
+cursor:pointer;
+color:red;
+font-weight:bold;
 }
 
 input{
 width:90%;
-padding:8px;
-margin:5px 0;
+padding:10px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid gray;
 }
 
-.close{
-background:red;
-margin-top:10px;
+.submit-btn{
+background:#ff6a00;
+color:white;
+padding:10px;
+border:none;
+border-radius:8px;
+width:100%;
 }
 
 </style>
@@ -86,58 +87,57 @@ margin-top:10px;
 
 <body>
 
-<h1>🚀 TODAY BIG OFFER 🚀</h1>
+<h1>🚀 TODAY BIG OFFER</h1>
 
-<div class="package">
-<h2>1K Reach</h2>
-<div class="price">₹150</div>
+<div class="box">
+<h2>1K Instagram Followers – ₹150</h2>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
-<div class="package">
-<h2>2K Reach</h2>
-<div class="price">₹200</div>
+<div class="box">
+<h2>2K Instagram Followers – ₹200</h2>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
-<div class="package">
-<h2>3K Reach</h2>
-<div class="price">₹300</div>
+<div class="box">
+<h2>3K Instagram Followers – ₹300</h2>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
-<div class="package">
-<h2>5K Reach</h2>
-<div class="price">₹350</div>
+<div class="box">
+<h2>5K Instagram Followers – ₹350</h2>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
-<div class="package">
-<h2>10K Reach</h2>
-<div class="price">₹450</div>
+<div class="box">
+<h2>10K Instagram Followers – ₹450</h2>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
 <!-- POPUP -->
+
 <div id="popup">
 <div class="popup-content">
 
-<h3>Scan QR to Pay</h3>
-<img src="qr.png">
+<div class="close" onclick="hideQR()">❌</div>
 
-<p>After Payment Fill Details</p>
+<h2>Scan QR to Pay</h2>
 
-<input type="text" placeholder="Enter Instagram Link">
+<img src="qr.png" width="250">
+
+<h3>After Payment Paste Instagram Link / Username</h3>
+
+<input type="text" placeholder="Paste Instagram Link or Username">
+
 <input type="text" placeholder="Enter UTR Number">
 
-<button>Submit</button>
-<br>
-<button class="close" onclick="hideQR()">Close</button>
+<button class="submit-btn">Submit</button>
 
 </div>
 </div>
 
 <script>
+
 function showQR(){
 document.getElementById("popup").style.display="block";
 }
@@ -145,7 +145,8 @@ document.getElementById("popup").style.display="block";
 function hideQR(){
 document.getElementById("popup").style.display="none";
 }
+
 </script>
 
 </body>
-</html>
+  </html>

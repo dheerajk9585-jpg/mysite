@@ -8,7 +8,7 @@
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:linear-gradient(135deg,#8e2de2,#ff6a00);
 color:white;
 text-align:center;
@@ -36,15 +36,15 @@ margin-top:10px;
 font-weight:bold;
 }
 
-button{
+.buy-btn{
 background:#ff1744;
 color:white;
 border:none;
-padding:10px 20px;
+padding:12px 20px;
 border-radius:8px;
-margin-top:10px;
-cursor:pointer;
+margin-top:15px;
 font-size:16px;
+cursor:pointer;
 }
 
 .popup{
@@ -57,7 +57,7 @@ height:100%;
 background:rgba(0,0,0,0.7);
 }
 
-.popup-content{
+.popup-box{
 background:white;
 color:black;
 width:90%;
@@ -68,11 +68,11 @@ border-radius:15px;
 position:relative;
 }
 
-.close-btn{
+.close{
 position:absolute;
 right:15px;
 top:10px;
-font-size:28px;
+font-size:25px;
 color:red;
 cursor:pointer;
 }
@@ -80,14 +80,23 @@ cursor:pointer;
 input{
 width:90%;
 padding:10px;
+margin-top:10px;
 border-radius:8px;
 border:1px solid #ccc;
-margin-top:10px;
 }
 
-.success-page{
-text-align:center;
-padding-top:150px;
+.submit-btn{
+background:#00c853;
+color:white;
+border:none;
+padding:10px 20px;
+margin-top:15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.success{
+padding-top:200px;
 height:100vh;
 background:linear-gradient(135deg,#8e2de2,#ff6a00);
 color:white;
@@ -102,74 +111,73 @@ color:white;
 <div class="service-box">
 <h2>1K Instagram Followers</h2>
 <div class="price">₹150</div><br>
-<button onclick="openPopup()">Buy Now</button>
+<button class="buy-btn" onclick="showPopup()">Buy Now</button>
 </div>
 
 <div class="service-box">
 <h2>2K Instagram Followers</h2>
 <div class="price">₹200</div><br>
-<button onclick="openPopup()">Buy Now</button>
+<button class="buy-btn" onclick="showPopup()">Buy Now</button>
 </div>
 
 <div class="service-box">
 <h2>3K Instagram Followers</h2>
 <div class="price">₹300</div><br>
-<button onclick="openPopup()">Buy Now</button>
+<button class="buy-btn" onclick="showPopup()">Buy Now</button>
 </div>
 
 <div class="service-box">
 <h2>5K Instagram Followers</h2>
 <div class="price">₹350</div><br>
-<button onclick="openPopup()">Buy Now</button>
+<button class="buy-btn" onclick="showPopup()">Buy Now</button>
 </div>
 
 <div class="service-box">
 <h2>10K Instagram Followers</h2>
 <div class="price">₹450</div><br>
-<button onclick="openPopup()">Buy Now</button>
+<button class="buy-btn" onclick="showPopup()">Buy Now</button>
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-<div class="popup-content">
+<div class="popup-box">
 
-<span class="close-btn" onclick="closePopup()">❌</span>
+<span class="close" onclick="hidePopup()">❌</span>
 
 <h2>Scan QR to Pay</h2>
 
 <img src="qr.png" style="width:100%; border-radius:10px;">
 
-<p style="margin-top:15px; font-weight:bold;">
+<p style="margin-top:15px;">
 After payment give here your Instagram link or username
 </p>
 
-<input type="text" id="username"
-placeholder="Enter Instagram link or username">
+<input type="text" id="insta" placeholder="Enter Instagram link or username">
 
-<br><br>
+<br>
 
-<button onclick="submitOrder()">Submit</button>
+<button class="submit-btn" onclick="submitOrder()">Submit</button>
 
 </div>
 </div>
 
 <script>
-function openPopup(){
+function showPopup(){
 document.getElementById("popup").style.display="block";
 }
 
-function closePopup(){
+function hidePopup(){
 document.getElementById("popup").style.display="none";
 }
 
 function submitOrder(){
-let value=document.getElementById("username").value;
+var value=document.getElementById("insta").value;
 
 if(value==""){
 alert("Please enter Instagram link or username");
 }else{
 document.body.innerHTML="
-<div class='success-page'>
+<div class='success'>
 <h2>Order Success ✅</h2>
 <p style='font-size:20px;'>Wait 1-2 Hour ⏳</p>
 </div>";
@@ -178,4 +186,4 @@ document.body.innerHTML="
 </script>
 
 </body>
-  </html>
+</html>

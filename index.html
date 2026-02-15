@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Today Big Offer</title>
+<title>Instagram Offer</title>
 
 <style>
 body{
@@ -18,53 +17,50 @@ h1{
 padding:20px;
 }
 
-.service-box{
+.box{
 background:rgba(0,0,0,0.3);
-margin:15px auto;
-padding:20px;
-border-radius:15px;
-width:90%;
-max-width:500px;
+margin:20px;
+padding:25px;
+border-radius:20px;
 }
 
 .price{
 background:#00c853;
 display:inline-block;
-padding:8px 15px;
-border-radius:8px;
-margin-top:10px;
-font-weight:bold;
+padding:10px 20px;
+border-radius:10px;
+margin:10px;
+font-size:20px;
 }
 
-.buy-btn{
+button{
 background:#ff1744;
-color:white;
 border:none;
-padding:12px 20px;
-border-radius:8px;
-margin-top:15px;
+padding:12px 25px;
+color:white;
+border-radius:10px;
 font-size:16px;
 cursor:pointer;
 }
 
-.popup{
+#popup{
 display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.8);
 }
 
-.popup-box{
+.popup-content{
 background:white;
 color:black;
 width:90%;
 max-width:400px;
-margin:60px auto;
+margin:50px auto;
 padding:20px;
-border-radius:15px;
+border-radius:20px;
 position:relative;
 }
 
@@ -82,105 +78,94 @@ width:90%;
 padding:10px;
 margin-top:10px;
 border-radius:8px;
-border:1px solid #ccc;
-}
-
-.submit-btn{
-background:#00c853;
-color:white;
-border:none;
-padding:10px 20px;
-margin-top:15px;
-border-radius:8px;
-cursor:pointer;
+border:1px solid gray;
 }
 
 .success{
-padding-top:200px;
-height:100vh;
-background:linear-gradient(135deg,#8e2de2,#ff6a00);
-color:white;
+display:none;
+font-size:20px;
+color:green;
+margin-top:15px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🚀 TODAY BIG OFFER 🚀</h1>
+<h1>🚀 TODAY BIG OFFER</h1>
 
-<div class="service-box">
+<div class="box">
 <h2>1K Instagram Followers</h2>
 <div class="price">₹150</div><br>
-<button class="buy-btn" onclick="showPopup()">Buy Now</button>
+<button onclick="openQR()">Buy Now</button>
 </div>
 
-<div class="service-box">
+<div class="box">
 <h2>2K Instagram Followers</h2>
 <div class="price">₹200</div><br>
-<button class="buy-btn" onclick="showPopup()">Buy Now</button>
+<button onclick="openQR()">Buy Now</button>
 </div>
 
-<div class="service-box">
+<div class="box">
 <h2>3K Instagram Followers</h2>
 <div class="price">₹300</div><br>
-<button class="buy-btn" onclick="showPopup()">Buy Now</button>
+<button onclick="openQR()">Buy Now</button>
 </div>
 
-<div class="service-box">
+<div class="box">
 <h2>5K Instagram Followers</h2>
 <div class="price">₹350</div><br>
-<button class="buy-btn" onclick="showPopup()">Buy Now</button>
+<button onclick="openQR()">Buy Now</button>
 </div>
 
-<div class="service-box">
+<div class="box">
 <h2>10K Instagram Followers</h2>
 <div class="price">₹450</div><br>
-<button class="buy-btn" onclick="showPopup()">Buy Now</button>
+<button onclick="openQR()">Buy Now</button>
 </div>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-<div class="popup-box">
 
-<span class="close" onclick="hidePopup()">❌</span>
+<!-- QR POPUP -->
+<div id="popup">
+<div class="popup-content">
+
+<span class="close" onclick="closeQR()">✖</span>
 
 <h2>Scan QR to Pay</h2>
 
-<img src="qr.png" style="width:100%; border-radius:10px;">
+<img src="qr.png" width="250px">
 
-<p style="margin-top:15px;">
-After payment give here your Instagram link or username
-</p>
+<p><b>After payment put your Instagram link or username</b></p>
 
-<input type="text" id="insta" placeholder="Enter Instagram link or username">
+<input type="text" id="insta" placeholder="Enter Instagram Username">
 
-<br>
+<br><br>
+<button onclick="submitOrder()">Submit</button>
 
-<button class="submit-btn" onclick="submitOrder()">Submit</button>
+<div class="success" id="successMsg">
+Order Success ✅<br>
+Please wait 1–2 hour
+</div>
 
 </div>
 </div>
+
 
 <script>
-function showPopup(){
+function openQR(){
 document.getElementById("popup").style.display="block";
 }
 
-function hidePopup(){
+function closeQR(){
 document.getElementById("popup").style.display="none";
 }
 
 function submitOrder(){
-var value=document.getElementById("insta").value;
-
-if(value==""){
-alert("Please enter Instagram link or username");
+var name=document.getElementById("insta").value;
+if(name==""){
+alert("Please enter Instagram username");
 }else{
-document.body.innerHTML="
-<div class='success'>
-<h2>Order Success ✅</h2>
-<p style='font-size:20px;'>Wait 1-2 Hour ⏳</p>
-</div>";
+document.getElementById("successMsg").style.display="block";
 }
 }
 </script>

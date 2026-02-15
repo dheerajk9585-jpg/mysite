@@ -1,84 +1,146 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>DHEERAJ OFFICIAL</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today Big Offer</title>
+
 <style>
 body{
-background: linear-gradient(to right, #4e008e, #ff6a00);
-font-family: Arial;
-text-align:center;
-color:white;
-margin:0;
-padding:0;
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#4b0082,#ff6600);
+    color:white;
+    text-align:center;
 }
+
 h1{
-padding:20px;
+    padding:20px;
+    font-size:30px;
 }
-.box{
-background:rgba(0,0,0,0.5);
-padding:15px;
-margin:15px;
-border-radius:10px;
+
+.container{
+    padding:15px;
 }
+
+.service-box{
+    background: rgba(0,0,0,0.3);
+    margin:15px auto;
+    padding:20px;
+    border-radius:15px;
+    width:90%;
+    max-width:500px;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+.price{
+    background:#0f9d58;
+    padding:10px 20px;
+    border-radius:10px;
+    font-size:20px;
+    display:inline-block;
+    margin-top:10px;
+}
+
 button{
-padding:10px 20px;
-border:none;
-background:#00c853;
-color:white;
-border-radius:8px;
-font-size:16px;
-cursor:pointer;
+    background:#00c853;
+    border:none;
+    padding:12px 25px;
+    margin-top:10px;
+    font-size:16px;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
 }
-#popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-text-align:center;
+
+button:hover{
+    background:#00e676;
 }
-#popup img{
-margin-top:100px;
-width:250px;
+
+.demo{
+    background:#1976d2;
+}
+
+.features{
+    margin-top:20px;
+    font-size:16px;
+}
+
+.order-btn{
+    background:#1b5e20;
+    font-size:18px;
+    padding:15px 30px;
+    border-radius:10px;
 }
 </style>
+
+<script>
+function showQR(){
+    alert("Scan QR to Pay");
+}
+</script>
+
 </head>
 
 <body>
 
 <h1>🚀 TODAY BIG OFFER 🚀</h1>
 
-<div class="box">
-<h2>1K Followers - ₹300</h2>
+<div class="container">
+
+<div class="service-box">
+<h2>1K Instagram Followers</h2>
+<div class="price">₹150</div><br>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
-<div class="box">
-<h2>2K Followers - ₹500</h2>
+<div class="service-box">
+<h2>2K Instagram Followers</h2>
+<div class="price">₹200</div><br>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
-<div class="box">
-<h2>5K Followers - ₹850</h2>
+<div class="service-box">
+<h2>3K Instagram Followers</h2>
+<div class="price">₹300</div><br>
 <button onclick="showQR()">Buy Now</button>
 </div>
 
-<div id="popup" onclick="hideQR()">
-<h2>Scan & Pay</h2>
-<img src="qr.png">
+<div class="service-box">
+<h2>5K Instagram Followers</h2>
+<div class="price">₹350</div><br>
+<button onclick="showQR()">Buy Now</button>
 </div>
 
-<script>
-function showQR(){
-document.getElementById("popup").style.display="block";
-}
-function hideQR(){
-document.getElementById("popup").style.display="none";
-}
-</script>
+<div class="service-box">
+<h2>10K Instagram Followers</h2>
+<div class="price">₹450</div><br>
+<button onclick="showQR()">Buy Now</button>
+</div>
+
+<div class="service-box">
+<h2>Permanent Blue Tick</h2>
+<div class="price" style="background:#2962ff;">₹299</div><br>
+<button onclick="showQR()">Buy Now</button>
+</div>
+
+<div class="service-box">
+<h2>🔥 SPECIAL DEMO OFFER 🔥</h2>
+<p>100 Followers Only ₹20</p>
+<button class="demo" onclick="showQR()">Try Special Demo ₹20</button>
+</div>
+
+<div class="features">
+<p>✅ Real Indian Followers 🇮🇳</p>
+<p>✅ Non-Drop Service Guaranteed 🛡️</p>
+<p>✅ Safe & Secure Process 🔒</p>
+</div>
+
+<br>
+
+<button class="order-btn" onclick="showQR()">Order Now >></button>
+
+</div>
 
 </body>
 </html>

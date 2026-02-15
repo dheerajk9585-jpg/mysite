@@ -37,7 +37,7 @@ button{
 background:#ff1744;
 border:none;
 padding:12px 25px;
-margin-top:10px;
+margin-top:15px;
 font-size:16px;
 border-radius:10px;
 color:white;
@@ -47,8 +47,6 @@ cursor:pointer;
 button:hover{
 background:#d50000;
 }
-
-/* POPUP */
 
 .popup{
 display:none;
@@ -66,7 +64,7 @@ align-items:center;
 background:white;
 color:black;
 width:90%;
-max-width:350px;
+max-width:360px;
 padding:20px;
 border-radius:15px;
 position:relative;
@@ -83,7 +81,7 @@ font-weight:bold;
 }
 
 .qr{
-width:140px;   /* SMALL SAFE SIZE */
+width:140px;
 margin-top:10px;
 border-radius:10px;
 }
@@ -91,7 +89,7 @@ border-radius:10px;
 input{
 width:90%;
 padding:10px;
-margin-top:15px;
+margin-top:12px;
 border-radius:8px;
 border:1px solid #ccc;
 font-size:14px;
@@ -152,11 +150,11 @@ font-weight:bold;
 
 <img src="qr.png" class="qr">
 
-<p>After Payment Put Your Instagram Link Or Username</p>
+<p><b>After Payment Enter Details Below</b></p>
 
-<input type="text" id="insta" placeholder="Enter Instagram Username">
+<input type="text" id="utr" placeholder="Enter UTR Number">
 
-<br>
+<input type="text" id="insta" placeholder="Enter Instagram Link or Username">
 
 <button onclick="submitOrder()">Submit</button>
 
@@ -179,9 +177,11 @@ document.getElementById("popup").style.display="none";
 }
 
 function submitOrder(){
-var name=document.getElementById("insta").value;
-if(name==""){
-alert("Please enter Instagram username");
+var utr=document.getElementById("utr").value;
+var insta=document.getElementById("insta").value;
+
+if(utr=="" || insta==""){
+alert("Please enter UTR and Instagram details");
 }else{
 document.getElementById("successMsg").style.display="block";
 }

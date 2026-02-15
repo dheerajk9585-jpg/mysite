@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Followers Offer</title>
+<title>Instagram Offer</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:linear-gradient(135deg,#8e2de2,#ff6a00);
 text-align:center;
 color:white;
@@ -18,7 +17,7 @@ h1{
 padding:20px;
 }
 
-.service{
+.box{
 background:rgba(255,255,255,0.15);
 margin:15px auto;
 padding:20px;
@@ -41,10 +40,6 @@ border-radius:8px;
 cursor:pointer;
 }
 
-button:hover{
-background:#009624;
-}
-
 .popup{
 display:none;
 position:fixed;
@@ -55,126 +50,112 @@ height:100%;
 background:rgba(0,0,0,0.7);
 }
 
-.popup-box{
+.popup-content{
 background:white;
 color:black;
 width:90%;
 max-width:400px;
-margin:60px auto;
+margin:40px auto;
 padding:20px;
 border-radius:15px;
-position:relative;
-}
-
-.close{
-position:absolute;
-top:10px;
-right:15px;
-font-size:22px;
-cursor:pointer;
-color:red;
 }
 
 .popup img{
 width:100%;
 border-radius:10px;
-margin-bottom:15px;
 }
 
 input{
 width:90%;
 padding:10px;
-margin-top:10px;
+margin-top:15px;
 border-radius:8px;
 border:1px solid #ccc;
 }
 
-.success{
+.success-page{
 display:none;
-margin-top:15px;
-color:green;
-font-weight:bold;
+padding-top:100px;
+font-size:22px;
+color:white;
 }
 </style>
-
 </head>
+
 <body>
 
 <h1>🔥 TODAY BIG OFFER 🔥</h1>
 
-<div class="service">
+<div class="box">
 <h2>1K Instagram Followers</h2>
 <div class="price">₹150</div>
-<button onclick="openQR()">Buy Now</button>
+<button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="service">
+<div class="box">
 <h2>2K Instagram Followers</h2>
 <div class="price">₹200</div>
-<button onclick="openQR()">Buy Now</button>
+<button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="service">
+<div class="box">
 <h2>3K Instagram Followers</h2>
 <div class="price">₹300</div>
-<button onclick="openQR()">Buy Now</button>
+<button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="service">
+<div class="box">
 <h2>5K Instagram Followers</h2>
 <div class="price">₹350</div>
-<button onclick="openQR()">Buy Now</button>
+<button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="service">
+<div class="box">
 <h2>10K Instagram Followers</h2>
 <div class="price">₹450</div>
-<button onclick="openQR()">Buy Now</button>
+<button onclick="openPopup()">Buy Now</button>
 </div>
 
-<!-- POPUP -->
+<!-- QR POPUP -->
 
 <div class="popup" id="popup">
-<div class="popup-box">
+<div class="popup-content">
 
-<div class="close" onclick="closeQR()">✖</div>
-
-<!-- QR TOP -->
 <img src="qr.png">
 
 <p>
-After payment put your Instagram link or username
+After payment give here your Instagram link or username
 </p>
 
-<input type="text" id="insta" placeholder="Enter Instagram Link or Username">
+<input type="text" id="username" placeholder="Enter Instagram link or username">
 
 <br><br>
 
 <button onclick="submitOrder()">Submit</button>
 
-<div class="success" id="msg">
-Order Successful ✅ <br>
-Wait 1–2 Hours ⏳
+</div>
 </div>
 
-</div>
+<!-- SUCCESS PAGE -->
+
+<div class="success-page" id="success">
+Order Success ✅ <br><br>
+Wait 1-2 Hour ⏳
 </div>
 
 <script>
-function openQR(){
+function openPopup(){
 document.getElementById("popup").style.display="block";
 }
 
-function closeQR(){
-document.getElementById("popup").style.display="none";
-}
-
 function submitOrder(){
-let value=document.getElementById("insta").value;
+let value=document.getElementById("username").value;
 if(value==""){
 alert("Please enter Instagram link or username");
 }else{
-document.getElementById("msg").style.display="block";
+document.getElementById("popup").style.display="none";
+document.body.innerHTML=document.getElementById("success").outerHTML;
+document.getElementById("success").style.display="block";
 }
 }
 </script>

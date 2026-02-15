@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Today Big Offer</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#8e2de2,#ff416c);
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#8e2de2,#ff6a00);
 color:white;
 text-align:center;
 }
@@ -20,19 +19,17 @@ padding:20px;
 
 .service-box{
 background:rgba(0,0,0,0.3);
-margin:20px auto;
+margin:20px;
 padding:25px;
-border-radius:15px;
-width:90%;
-max-width:500px;
+border-radius:20px;
 }
 
 .price{
 background:#00c853;
 padding:10px 20px;
-border-radius:8px;
+border-radius:10px;
 display:inline-block;
-margin:10px 0;
+margin-top:10px;
 font-size:18px;
 }
 
@@ -40,9 +37,10 @@ button{
 background:#ff1744;
 border:none;
 padding:12px 25px;
-color:white;
-border-radius:8px;
+margin-top:10px;
 font-size:16px;
+border-radius:10px;
+color:white;
 cursor:pointer;
 }
 
@@ -50,7 +48,7 @@ button:hover{
 background:#d50000;
 }
 
-/* Popup Style */
+/* POPUP */
 
 .popup{
 display:none;
@@ -59,7 +57,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.7);
 justify-content:center;
 align-items:center;
 }
@@ -68,28 +66,33 @@ align-items:center;
 background:white;
 color:black;
 width:90%;
-max-width:400px;
-border-radius:15px;
+max-width:350px;
 padding:20px;
+border-radius:15px;
 position:relative;
-text-align:center;
 }
 
 .close{
 position:absolute;
-right:15px;
 top:10px;
-font-size:25px;
-color:red;
+right:15px;
+font-size:22px;
 cursor:pointer;
+color:red;
 font-weight:bold;
+}
+
+.qr{
+width:140px;   /* SMALL SAFE SIZE */
+margin-top:10px;
+border-radius:10px;
 }
 
 input{
 width:90%;
 padding:10px;
-margin-top:10px;
-border-radius:5px;
+margin-top:15px;
+border-radius:8px;
 border:1px solid #ccc;
 font-size:14px;
 }
@@ -138,35 +141,32 @@ font-weight:bold;
 <button onclick="openPopup()">Buy Now</button>
 </div>
 
-
 <!-- POPUP -->
 
 <div class="popup" id="popup">
-
 <div class="popup-content">
 
 <span class="close" onclick="closePopup()">✖</span>
 
-<h2>Scan QR to Pay</h2>
+<h2>Scan QR To Pay</h2>
 
-<img src="qr.png" width="250px">
+<img src="qr.png" class="qr">
 
-<p><b>Put Your Instagram Link Or Username</b></p>
+<p>After Payment Put Your Instagram Link Or Username</p>
 
 <input type="text" id="insta" placeholder="Enter Instagram Username">
 
-<br><br>
+<br>
 
 <button onclick="submitOrder()">Submit</button>
 
 <div class="success" id="successMsg">
 Order Success ✅ <br>
-Wait 1–2 Hour
+Wait 1-2 Hour
 </div>
 
 </div>
 </div>
-
 
 <script>
 
@@ -180,7 +180,6 @@ document.getElementById("popup").style.display="none";
 
 function submitOrder(){
 var name=document.getElementById("insta").value;
-
 if(name==""){
 alert("Please enter Instagram username");
 }else{

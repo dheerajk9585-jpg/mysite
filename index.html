@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Offer</title>
+<title>Today Big Offer</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:linear-gradient(135deg,#8e2de2,#ff6a00);
-text-align:center;
 color:white;
+text-align:center;
 }
 
 h1{
 padding:20px;
 }
 
-.box{
-background:rgba(255,255,255,0.15);
+.service-box{
+background:rgba(0,0,0,0.3);
 margin:15px auto;
 padding:20px;
 border-radius:15px;
 width:90%;
-max-width:400px;
+max-width:500px;
 }
 
 .price{
-font-size:20px;
-margin:10px 0;
+background:#00c853;
+display:inline-block;
+padding:8px 15px;
+border-radius:8px;
+margin-top:10px;
+font-weight:bold;
 }
 
 button{
-padding:10px 20px;
-border:none;
-background:#00c853;
+background:#ff1744;
 color:white;
+border:none;
+padding:10px 20px;
 border-radius:8px;
+margin-top:10px;
 cursor:pointer;
+font-size:16px;
 }
 
 .popup{
@@ -55,28 +62,34 @@ background:white;
 color:black;
 width:90%;
 max-width:400px;
-margin:40px auto;
+margin:60px auto;
 padding:20px;
 border-radius:15px;
+position:relative;
 }
 
-.popup img{
-width:100%;
-border-radius:10px;
+.close-btn{
+position:absolute;
+right:15px;
+top:10px;
+font-size:28px;
+color:red;
+cursor:pointer;
 }
 
 input{
 width:90%;
 padding:10px;
-margin-top:15px;
 border-radius:8px;
 border:1px solid #ccc;
+margin-top:10px;
 }
 
 .success-page{
-display:none;
-padding-top:100px;
-font-size:22px;
+text-align:center;
+padding-top:150px;
+height:100vh;
+background:linear-gradient(135deg,#8e2de2,#ff6a00);
 color:white;
 }
 </style>
@@ -84,50 +97,54 @@ color:white;
 
 <body>
 
-<h1>🔥 TODAY BIG OFFER 🔥</h1>
+<h1>🚀 TODAY BIG OFFER 🚀</h1>
 
-<div class="box">
+<div class="service-box">
 <h2>1K Instagram Followers</h2>
-<div class="price">₹150</div>
+<div class="price">₹150</div><br>
 <button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="box">
+<div class="service-box">
 <h2>2K Instagram Followers</h2>
-<div class="price">₹200</div>
+<div class="price">₹200</div><br>
 <button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="box">
+<div class="service-box">
 <h2>3K Instagram Followers</h2>
-<div class="price">₹300</div>
+<div class="price">₹300</div><br>
 <button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="box">
+<div class="service-box">
 <h2>5K Instagram Followers</h2>
-<div class="price">₹350</div>
+<div class="price">₹350</div><br>
 <button onclick="openPopup()">Buy Now</button>
 </div>
 
-<div class="box">
+<div class="service-box">
 <h2>10K Instagram Followers</h2>
-<div class="price">₹450</div>
+<div class="price">₹450</div><br>
 <button onclick="openPopup()">Buy Now</button>
 </div>
 
-<!-- QR POPUP -->
-
+<!-- POPUP -->
 <div class="popup" id="popup">
 <div class="popup-content">
 
-<img src="qr.png">
+<span class="close-btn" onclick="closePopup()">❌</span>
 
-<p>
+<h2>Scan QR to Pay</h2>
+
+<img src="qr.png" style="width:100%; border-radius:10px;">
+
+<p style="margin-top:15px; font-weight:bold;">
 After payment give here your Instagram link or username
 </p>
 
-<input type="text" id="username" placeholder="Enter Instagram link or username">
+<input type="text" id="username"
+placeholder="Enter Instagram link or username">
 
 <br><br>
 
@@ -136,29 +153,29 @@ After payment give here your Instagram link or username
 </div>
 </div>
 
-<!-- SUCCESS PAGE -->
-
-<div class="success-page" id="success">
-Order Success ✅ <br><br>
-Wait 1-2 Hour ⏳
-</div>
-
 <script>
 function openPopup(){
 document.getElementById("popup").style.display="block";
 }
 
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
 function submitOrder(){
 let value=document.getElementById("username").value;
+
 if(value==""){
 alert("Please enter Instagram link or username");
 }else{
-document.getElementById("popup").style.display="none";
-document.body.innerHTML=document.getElementById("success").outerHTML;
-document.getElementById("success").style.display="block";
+document.body.innerHTML="
+<div class='success-page'>
+<h2>Order Success ✅</h2>
+<p style='font-size:20px;'>Wait 1-2 Hour ⏳</p>
+</div>";
 }
 }
 </script>
 
 </body>
-</html>
+  </html>
